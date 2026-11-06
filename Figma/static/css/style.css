@@ -1,0 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.caja-figma {
+  width: 350px;
+  height: 710px;
+  border-radius: 30px;
+  border: 10px solid #000;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px 5px #000;
+
+  background-image:url(../images/Gemini_Generated_Image.jpeg);
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.figma-pizza{
+  width: 350px;
+  height: 710px;
+  border-radius: 30px;
+  border: 10px solid #000;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px 5px #000;
+
+  background-image:url(../images/watermarked_img_15238587307394349964.jpg);
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat;
+}
