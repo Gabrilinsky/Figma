@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PizzaBriel</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+</head>
+
+<body>
+    <header class="navbar-header">
+        <div class="logo-header">
+            <img src="static/images/logo.png" alt="Logo" class="logo" />
+            <div>
+                <h1>PizzaBriel</h1>
+                <p>Pizzeria Artesanal</p>
+            </div>
+        </div>
+
+        <nav class="links-nav">
+            <a href="#home" class="nav-link-menu" onclick="filterCategory('Menu')">Menu Completo</a>
+            <a href="#Pizza" class="nav-link" onclick="filterCategory('Pizza')">Pizza</a>
+            <a href="#bebestibles" class="nav-link" onclick="filterCategory('Bebida')">Bebidas</a>
+            <a href="#acompañamiento" class="nav-link" onclick="filterCategory('Acompañado')">Acompañamientos</a>
+        </nav>
+
+        <div class="actions-compra">
+            <button id="btn" class="btn-compra">
+                🛒 Carrito <span id="compra" class="span-compra">0</span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-contenido">
+            <h2>Sabor Artesanal Horneado a la leña</h2>
+            <p>
+                Pizzas Tradicionales, acompañamiento crujientes y bebestibles frescos.
+            </p>
+        </div>
+    </section>
+
+    <main class="container-main">
+        <div class="controls-main">
+            <div class="categoria-main">
+                <button class="main-button" data-cat="all">Todos</button>
+                <button class="main-button" data-cat="pizzas">Pizzas</button>
+                <button class="main-button" data-cat="bebestibles">Bebestibles</button>
+                <button class="main-button" data-cat="acompañamientos">Acompañamientos</button>
+            </div>
+            <input type="text" id="searchInput" placeholder="Buscar en el menú..." class="search-input">
+        </div>
+        <div id="productgrid" class="grid"></div>
+    </main>
+
+    <aside id="carta-pedido" class="pedido-aside">
+        <div class="drawn-aside">
+            <h3>Tu pedido</h3>
+            <button id="closeCart" class="close-btn">&times;</button>
+        </div>
+        <div id="cartItems" class="drawer-body"></div>
+        <div class="drawer-footer">
+            <div class="total-row">
+                <span>Total:</span>
+                <strong id="cartTotal">$0 CLP</strong>
+            </div>
+            <button id="checkoutBtn" class="btn-primary full-width">Enviar Pedido por WhatsApp</button>
+        </div>
+    </aside>
+    </div>
+    </aside>
+
+    <script src="static/js/script.js"></script>
+</body>
+
+</html>
