@@ -4,30 +4,330 @@
   box-sizing: border-box;
 }
 
-.caja-figma {
-  width: 350px;
-  height: 710px;
-  border-radius: 30px;
-  border: 10px solid #000;
-  overflow: hidden;
-  box-shadow: 0px 0px 20px 5px #000;
-
-  background-image:url(../images/Gemini_Generated_Image.jpeg);
-  background-size: cover;       
-  background-position: center;  
-  background-repeat: no-repeat;
+body {
+  background-color: #1e1b18;
+  color: #f5f5f5;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-.figma-pizza{
-  width: 350px;
-  height: 710px;
-  border-radius: 30px;
-  border: 10px solid #000;
-  overflow: hidden;
-  box-shadow: 0px 0px 20px 5px #000;
+/* Encabezado / Navegación */
+.navbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(30, 27, 24, 0.95);
+  border-bottom: 2px solid #c0392b;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
 
-  background-image:url(../images/watermarked_img_15238587307394349964.jpg);
-  background-size: cover;       
-  background-position: center;  
-  background-repeat: no-repeat;
+.logo-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-header .logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.logo-header h1 {
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  color: #f5f5f5;
+}
+
+.logo-header p {
+  font-size: 0.8rem;
+  color: #d35400;
+}
+
+.links-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link, .nav-link-menu {
+  color: #bdc3c7;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link-menu:hover,
+.nav-link.active, .nav-link-menu.active {
+  color: #d35400;
+}
+
+.actions-compra {
+  display: flex;
+  align-items: center;
+}
+
+.btn-compra {
+  background-color: #d35400;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-compra:hover {
+  background-color: #b04400;
+}
+
+.span-compra {
+  background: white;
+  color: #d35400;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* Banner Principal (Hero) */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
+              url('../images/02_pizza_en_horno.png') center/cover no-repeat;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero-contenido h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #d35400;
+}
+
+.hero-contenido p {
+  color: #bdc3c7;
+  font-size: 1.1rem;
+}
+
+/* Contenedor Principal y Filtros */
+.container-main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.controls-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.categoria-main {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.main-button {
+  background-color: #2a2421;
+  color: #bdc3c7;
+  border: 1px solid #3e3530;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.main-button:hover, .main-button.active {
+  background-color: #c0392b;
+  color: white;
+  border-color: #c0392b;
+}
+
+.search-input {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid #3e3530;
+  background-color: #2a2421;
+  color: white;
+  min-width: 250px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #d35400;
+}
+
+/* Grid de Productos y Tarjetas */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background-color: #2a2421;
+  border: 1px solid #3e3530;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #f5f5f5;
+}
+
+.size-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.size-btn {
+  flex: 1;
+  padding: 6px;
+  font-size: 0.85rem;
+  background-color: #38302c;
+  color: #bdc3c7;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.size-btn.active {
+  background-color: #d35400;
+  color: white;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #962d22;
+}
+
+/* Panel Lateral del Carrito (Aside) */
+.pedido-aside {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 360px;
+  height: 100vh;
+  background-color: #2a2421;
+  border-left: 2px solid #3e3530;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+  z-index: 200;
+}
+
+.pedido-aside.open {
+  right: 0;
+}
+
+.drawn-aside {
+  padding: 1.2rem;
+  border-bottom: 1px solid #3e3530;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #bdc3c7;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: white;
+}
+
+.drawer-body {
+  flex-grow: 1;
+  padding: 1.2rem;
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #3e3530;
+}
+
+.drawer-footer {
+  padding: 1.2rem;
+  border-top: 1px solid #3e3530;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.full-width {
+  width: 100%;
 }
